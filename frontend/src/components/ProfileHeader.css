@@ -1,0 +1,104 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.05)
+  );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-header:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   Avatar
+========================= */
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 0 0 4px rgba(29, 185, 84, 0.35),
+    0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   Text Content
+========================= */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.profile-followers {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* =========================
+   Mobile Tweaks
+========================= */
+@media (max-width: 768px) {
+  .profile-header {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .profile-avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.2rem;
+  }
+}
+.clickable {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 4px rgba(29, 185, 84, 0.45),
+    0 8px 24px rgba(0, 0, 0, 0.7);
+}
