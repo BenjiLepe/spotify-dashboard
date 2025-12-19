@@ -1,6 +1,3 @@
-/* Player.css */
-
-/* Player container */
 .player-container {
   width: 360px;
   padding: 30px;
@@ -13,7 +10,6 @@
   color: white;
 }
 
-/* Album art */
 .album-art {
   width: 100%;
   border-radius: 16px;
@@ -21,7 +17,6 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Track info */
 .track-name {
   font-size: 1.4rem;
   font-weight: 600;
@@ -34,7 +29,6 @@
   margin-bottom: 20px;
 }
 
-/* Progress bar */
 .progress-bar {
   width: 100%;
   height: 8px;
@@ -46,12 +40,11 @@
 
 .progress-filled {
   height: 100%;
-  background: #1db954; /* Spotify green */
+  background: #1db954; 
   width: 0%;
   transition: width 0.2s linear;
 }
 
-/* Controls */
 .controls {
   display: flex;
   justify-content: space-around;

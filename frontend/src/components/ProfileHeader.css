@@ -30,9 +30,7 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-/* =========================
-   Avatar
-========================= */
+
 .profile-avatar {
   width: 64px;
   height: 64px;
@@ -45,9 +43,7 @@
     0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* =========================
-   Text Content
-========================= */
+
 .profile-info {
   display: flex;
   flex-direction: column;
@@ -73,9 +69,7 @@
   opacity: 0.75;
 }
 
-/* =========================
-   Mobile Tweaks
-========================= */
+
 @media (max-width: 768px) {
   .profile-header {
     padding: 14px 16px;

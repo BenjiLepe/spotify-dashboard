@@ -1,107 +1,106 @@
-/* Card container */
 .top-artists-card,
 .top-tracks-card {
-  width: 200px;
-  height: 400px; /* fixed height for scroll */
-  overflow-y: auto; /* scrollable */
-  padding: 1rem;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+width: 200px;
+height: 400px;
+overflow-y: auto; 
+  scrollbar-width: none; 
+-ms-overflow-style: none; 
+padding: 1rem;
+border-radius: 20px;
+background: rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+border: 1px solid rgba(213, 197, 197, 0.1);
+color: white;
+scroll-behavior: smooth;
 }
 
-/* Sticky card title */
 .top-artists-card h3,
 .top-tracks-card h3 {
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  margin: 0 0 1rem 0;
-  padding: 0.5rem 0;
-  font-size: 1.2rem;
-  z-index: 2;
+position: sticky;
+top: 0;
+background: rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+margin: 0 0 1rem 0;
+padding: 0.5rem 0;
+font-size: 1.2rem;
+z-index: 2;
 }
 
-/* List items */
 .top-artists-card ul,
 .top-tracks-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 .top-artists-card li,
 .top-tracks-card li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+margin-bottom: 1rem;
 }
 
 .artist-thumb,
 .track-thumb {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+width: 40px;
+height: 40px;
+border-radius: 8px;
 }
 
 .artist-rank,
 .track-rank {
-  font-weight: bold;
+font-weight: bold;
 }
 
 .artist-name,
 .track-name {
-  font-size: 0.95rem;
-  font-weight: 500;
+font-size: 0.95rem;
+font-weight: 500;
 }
 
 .track-artists {
-  font-size: 0.8rem;
-  opacity: 0.8;
+font-size: 0.8rem;
+opacity: 0.8;
 }
 .time-tabs {
-  display: flex;
-  gap: 20px;
-  color: #aaa;
+display: flex;
+gap: 20px;
+color: #aaa;
 }
 
 .tab {
-  cursor: pointer;
-  position: relative;
+cursor: pointer;
+position: relative;
 }
 
 .tab.active {
-  color: white;
+color: white;
 }
 
 .tab.active::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: white;
-  border-radius: 2px;
+content: "";
+position: absolute;
+bottom: -6px;
+left: 0;
+width: 100%;
+height: 2px;
+background: white;
+border-radius: 2px;
 }
 .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 20px;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+.content {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
 }
 
 

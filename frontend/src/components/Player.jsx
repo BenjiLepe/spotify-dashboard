@@ -6,33 +6,28 @@ export default function Player({ track, accessToken, onAction }) {
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
 
-  // Update progress whenever the track changes
   useEffect(() => {
     if (!track) {
       setProgress(0);
       return;
     }
 
-    // Start from the current progress
     setProgress(track.progress_ms || 0);
     const startTime = Date.now() - (track.progress_ms || 0);
 
-    // Clear previous interval if exists
     if (intervalRef.current) clearInterval(intervalRef.current);
 
     intervalRef.current = setInterval(() => {
       const elapsed = Date.now() - startTime;
       setProgress(Math.min(elapsed, track.duration_ms));
-    }, 200); // smooth update every 200ms
+    }, 200);
 
     return () => clearInterval(intervalRef.current);
-  }, [track]);
+  }, [track?.id]);
 
   if (!track) return <div className="player-container">No track playing</div>;
 
-  const progressRatio = track.duration_ms
-    ? progress / track.duration_ms
-    : 0;
+  const progressRatio = track.duration_ms ? progress / track.duration_ms : 0;
 
   return (
     <div className="player-container">
@@ -41,6 +36,7 @@ export default function Player({ track, accessToken, onAction }) {
         alt={track.name}
         className="album-art"
       />
+
       <h3 className="track-name">{track.name}</h3>
       <p className="artist-name">{track.artists.map(a => a.name).join(", ")}</p>
 

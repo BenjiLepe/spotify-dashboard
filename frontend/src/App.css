@@ -1,6 +1,4 @@
-/* App.css */
 
-/* Main container */
 .app-container {
   position: relative;
   min-height: 100vh;
@@ -8,14 +6,13 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: transparent; /* instead of #121212 */
+  background: transparent; 
 }
 
 
-/* Login button container */
 .login-container {
   position: relative;
-  z-index: 10; /* Always above background */
+  z-index: 10; 
   text-align: center;
   margin-top: 3rem;
 }
@@ -25,7 +22,7 @@
   font-size: 1.2rem;
   border-radius: 12px;
   border: none;
-  background-color: #1db954; /* Spotify green */
+  background-color: #1db954; 
   color: white;
   cursor: pointer;
   transition: 0.2s;
@@ -35,21 +32,19 @@
   transform: scale(1.05);
 }
 
-/* Background album blur */
 .bg-album {
-  position: fixed; /* fixed so it stays behind content even when scrolling */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  filter: blur(15px) brightness(0.6); /* slightly lighter for visibility */
+  filter: blur(15px) brightness(0.6); 
   z-index: -2;
   transition: background-image 0.3s ease-in-out;
 }
 
-/* Gradient overlay on top of blurred album */
 .bg-overlay {
   position: fixed;
   top: 0;
@@ -57,9 +52,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  /* Remove background to test */
   background: transparent; 
-  /* background: linear-gradient(270deg, rgba(255,0,150,0.15), rgba(0,200,255,0.15)); */
 }
 
 @keyframes gradientShift {
@@ -68,16 +61,14 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Content layout */
 .content {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
   position: relative;
-  z-index: 5; /* Ensure content is above background layers */
+  z-index: 5; 
 }
 
-/* Card styles for Top Artists & Top Tracks */
 .card {
   width: 200px;
   padding: 20px;
@@ -92,7 +83,6 @@
   overflow-y: auto;
 }
 
-/* Card titles */
 .card h3 {
   position: sticky;
   top: 0;
@@ -102,7 +92,6 @@
   z-index: 2;
 }
 
-/* Card images */
 .card img {
   width: 100%;
   border-radius: 12px;
@@ -110,7 +99,6 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Card text */
 .card h4 {
   margin: 0.5rem 0;
   font-size: 1rem;
@@ -122,9 +110,8 @@
   margin: 0;
 }
 
-/* Player container inside content */
 .player-container {
-  flex: 1; /* grow to fill available space */
+  flex: 1; 
   padding: 20px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.12);
@@ -135,7 +122,6 @@
   color: white;
 }
 
-/* Album art */
 .album-art {
   width: 100%;
   border-radius: 16px;
@@ -143,7 +129,6 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
-/* Track info */
 .track-name {
   font-size: 1.4rem;
   font-weight: 600;
@@ -156,7 +141,6 @@
   margin-bottom: 20px;
 }
 
-/* Playback controls */
 .controls {
   display: flex;
   justify-content: space-around;

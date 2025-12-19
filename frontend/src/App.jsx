@@ -1,10 +1,10 @@
-// App.jsx
 import { useState, useEffect } from "react";
 import Player from "./components/Player";
 import TopTracks from "./components/TopTracks";
 import TopArtists from "./components/TopArtists";
 import TimeRangeToggle from "./components/TimeRangeToggle";
 import ProfileHeader from "./components/ProfileHeader";
+import RecentlyPlayed from "./components/RecentlyPlayed"; 
 import "./App.css";
 
 function App() {
@@ -15,9 +15,6 @@ function App() {
   const [timeRange, setTimeRange] = useState("medium_term");
   const [user, setUser] = useState(null);
 
-  // ============================
-  // Get access token from URL
-  // ============================
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("access_token");
@@ -27,9 +24,6 @@ function App() {
     }
   }, []);
 
-  // ============================
-  // Fetch current playing track
-  // ============================
   const fetchCurrentTrack = async () => {
     if (!accessToken) return;
     try {
@@ -43,9 +37,6 @@ function App() {
     }
   };
 
-  // ============================
-  // Fetch user profile
-  // ============================
   const fetchUser = async () => {
     if (!accessToken) return;
     try {
@@ -59,9 +50,6 @@ function App() {
     }
   };
 
-  // ============================
-  // Fetch top tracks
-  // ============================
   const fetchTopTracks = async () => {
     if (!accessToken) return;
     try {
@@ -75,9 +63,7 @@ function App() {
     }
   };
 
-  // ============================
-  // Fetch top artists
-  // ============================
+
   const fetchTopArtists = async () => {
     if (!accessToken) return;
     try {
@@ -91,9 +77,7 @@ function App() {
     }
   };
 
-  // ============================
-  // Initial fetch
-  // ============================
+
   useEffect(() => {
     if (!accessToken) return;
 
@@ -106,9 +90,6 @@ function App() {
     return () => clearInterval(interval);
   }, [accessToken]);
 
-  // ============================
-  // Re-fetch on time range change
-  // ============================
   useEffect(() => {
     if (!accessToken) return;
     fetchTopTracks();
@@ -117,7 +98,6 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Login */}
       {!accessToken && (
         <div className="login-container">
           <a href="http://127.0.0.1:5000/login">
@@ -126,7 +106,6 @@ function App() {
         </div>
       )}
 
-      {/* Logged-in content */}
       {accessToken && (
         <>
           {currentTrack?.album?.images?.[0]?.url && (
@@ -148,6 +127,7 @@ function App() {
               <ProfileHeader user={user} />
               <TimeRangeToggle value={timeRange} onChange={setTimeRange} />
               <Player track={currentTrack} accessToken={accessToken} />
+              <RecentlyPlayed accessToken={accessToken} />
             </div>
 
             <TopTracks tracks={topTracks} />
