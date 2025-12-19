@@ -1,0 +1,92 @@
+/* Card container */
+.recently-played-card {
+width: 400px;
+height: 400px; /* fixed height for scroll */
+overflow-y: auto; /* scrollable */
+scrollbar-width: none; /* Firefox */
+-ms-overflow-style: none; /* IE 10+ */
+padding: 1rem;
+border-radius: 20px;
+background: rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+border: 1px solid rgba(255, 255, 255, 0.1);
+color: white;
+
+}
+.recently-played-card::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Sticky card title */
+.recently-played-card h3 {
+position: sticky;
+top: 0;
+background: rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+margin: 0 0 1rem 0;
+padding: 0.5rem 0;
+font-size: 1.2rem;
+z-index: 2;
+}
+
+/* List items */
+.recently-played-card ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.recently-played-card li {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+margin-bottom: 1rem;
+}
+
+/* Thumbnail image */
+.track-thumb {
+width: 40px;
+height: 40px;
+border-radius: 8px;
+flex-shrink: 0;
+}
+
+/* Rank / index */
+.track-rank {
+font-weight: bold;
+}
+
+/* Track info */
+.track-name {
+font-size: 0.95rem;
+font-weight: 500;
+}
+
+.track-artists {
+font-size: 0.8rem;
+opacity: 0.8;
+}
+
+/* Played time info */
+.track-time {
+font-size: 0.75rem;
+opacity: 0.6;
+margin-left: auto;
+}
+
+/* Responsive grid for multiple cards (if needed) */
+.recently-played-container {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+.recently-played-container {
+grid-template-columns: 1fr;
+gap: 16px;
+}
+}
